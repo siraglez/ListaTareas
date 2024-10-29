@@ -21,10 +21,10 @@
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:padding="8dp"
-            android:text="Mis recordatorios"
-            android:textColor="#5E35B1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:text="@string/app_name"
+        android:textColor="#5E35B1"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
         <!-- Botón para cambiar idioma -->
         <ToggleButton
@@ -34,11 +34,11 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="8dp"
-            android:textOff="ES"
-            android:textOn="EN"
-            android:background="@color/buttonBackground"
-            android:textColor="@color/buttonTextColor"
-            style="@style/AddButtonStyle" />
+            android:textOff="@string/toggle_language_es"
+        android:textOn="@string/toggle_language_en"
+        android:background="@color/buttonBackground"
+        android:textColor="@color/buttonTextColor"
+        style="@style/AddButtonStyle" />
     </RelativeLayout>
 
     <!-- Campo de texto para ingresar tarea y botón añadir -->
@@ -53,21 +53,21 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Escribe una tarea"
-            android:minHeight="48dp"
-            android:padding="8dp"
-            android:background="@color/colorAccent"
-            android:textColor="@color/buttonTextColor" />
+            android:hint="@string/add_task_hint"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/buttonTextColor" />
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:background="@color/buttonBackground"
-            android:textColor="@color/buttonTextColor"
-            style="@style/AddButtonStyle"
-            android:layout_marginStart="8dp" />
+            android:text="@string/add_button"
+        android:background="@color/buttonBackground"
+        android:textColor="@color/buttonTextColor"
+        style="@style/AddButtonStyle"
+        android:layout_marginStart="8dp" />
     </LinearLayout>
 
     <!-- ListView para mostrar tareas -->
@@ -88,14 +88,14 @@
         <Button
             android:id="@+id/btnPending"
             style="@style/BottomButtonStyle"
-            android:text="Pendientes"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp" />
+            android:text="@string/pending_button"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/btnDone"
             style="@style/BottomButtonStyle"
-            android:text="Hechas"
-            android:layout_weight="1" />
+            android:text="@string/done_button"
+        android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>

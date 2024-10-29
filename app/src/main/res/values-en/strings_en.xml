@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Tasks</string>
+    <string name="app_name">My Reminders</string>
     <string name="add_task_hint">Add task</string>
-    <string name="add_button">Add</string>
+    <string name="add_button">+</string>
     <string name="pending_button">Pending</string>
     <string name="done_button">Done</string>
+    <string name="back_button">Volver</string>
     <string name="mark_as_done">Done</string>
     <string name="delete">Delete</string>
+    <string name="toggle_language_es">ES</string>
+    <string name="toggle_language_en">EN</string>
 </resources>
