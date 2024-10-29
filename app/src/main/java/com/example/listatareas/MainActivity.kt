@@ -1,10 +1,12 @@
 package com.example.listatareas
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var lvTasks: ListView
     private lateinit var btnPending: Button
     private lateinit var btnDone: Button
+    private lateinit var btnIdioma: ToggleButton
 
     private val pendingTasks = mutableListOf<String>()
     private val doneTasks = mutableListOf<String>()
@@ -22,11 +25,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Obtener preferencia de idioma guardada
+        val preferences = getSharedPreferences("ajustes", MODE_PRIVATE)
+        val language = preferences.getString("idioma", "es") ?: "es"
+        cambiarIdioma(language)
+
         etTask = findViewById(R.id.etTask)
         btnAdd = findViewById(R.id.btnAdd)
         lvTasks = findViewById(R.id.lvTasks)
         btnPending = findViewById(R.id.btnPending)
         btnDone = findViewById(R.id.btnDone)
+        btnIdioma = findViewById(R.id.btnIdioma)
+
+        // Configurar estado inicial del ToggleButton basado en el idioma actual
+        btnIdioma.isChecked = language == "es"
 
         // Adapter para la lista de tareas
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, pendingTasks)
@@ -62,10 +74,33 @@ class MainActivity : AppCompatActivity() {
         lvTasks.setOnItemClickListener { _, _, position, _ ->
             showTaskOptions(position)
         }
+
+        // Cambiar idioma al presionar el ToggleButton
+        btnIdioma.setOnClickListener {
+            if (btnIdioma.isChecked) cambiarIdioma("es") else cambiarIdioma("en")
+        }
     }
 
     private fun updateTaskList() {
         adapter.notifyDataSetChanged()
+    }
+
+    private fun cambiarIdioma(idioma: String) {
+        val currentLanguage = resources.configuration.locales[0].language
+        if (currentLanguage != idioma) {
+            val locale = Locale(idioma)
+            Locale.setDefault(locale)
+            val config = Configuration(resources.configuration)
+            config.setLocale(locale)
+            resources.updateConfiguration(config, resources.displayMetrics)
+
+            // Guardar preferencia de idioma
+            val preferences = getSharedPreferences("ajustes", MODE_PRIVATE)
+            preferences.edit().putString("idioma", idioma).apply()
+
+            // Recrear actividad para aplicar cambios de idioma
+            recreate()
+        }
     }
 
     private fun showTaskOptions(position: Int) {
