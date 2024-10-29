@@ -1,20 +1,9 @@
 <resources>
-    <string name="app_name">ListaTareas</string>
-    <string name="my_reminders">Mis recordatorios</string>
-    <string name="add_task_hint">Escribe una tarea...</string>
+    <string name="app_name">Tareas</string>
+    <string name="add_task_hint">Añadir tarea</string>
     <string name="add_button">Añadir</string>
-    <string name="pending">Pendientes</string>
-    <string name="done">Hechas</string>
+    <string name="pending_button" translatable="false">Pendientes</string>
+    <string name="done_button" translatable="false">Hechas</string>
     <string name="mark_as_done">Hecho</string>
     <string name="delete">Eliminar</string>
-</resources>
-<resources>
-<string name="app_name">Tasks</string>
-<string name="my_reminders">My Reminders</string>
-<string name="add_task_hint">Enter a task...</string>
-<string name="add_button">Add</string>
-<string name="pending">Pending</string>
-<string name="done">Done</string>
-<string name="mark_as_done">Mark as Done</string>
-<string name="delete">Delete</string>
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Colores de la barra de título y el fondo -->
+        <item name="colorPrimary">#42A5F5</item> <!-- Azul claro para la barra de título -->
+        <item name="colorPrimaryDark">#1976D2</item> <!-- Azul oscuro para la barra de estado -->
+        <item name="colorAccent">#E6E6FA</item> <!-- Color de acento (para botones o elementos activos) -->
+        <item name="android:windowBackground">#FAFAFA</item> <!-- Fondo claro para la aplicación -->
+    </style>
+
+    <!-- Estilo para el título de la aplicación (Texto en la barra de título) -->
+    <style name="AppTitleTextStyle">
+        <item name="android:textColor">#FFFFFF</item> <!-- Blanco para el texto de la barra de título -->
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Estilo para botones grandes de la parte inferior (Pendientes, Hechas) -->
+    <style name="BottomButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#E0E0E0</item> <!-- Fondo gris claro para los botones -->
+        <item name="android:textColor">#000000</item> <!-- Texto negro -->
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para el botón de añadir (+) -->
+    <style name="AddButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">#000000</item> <!-- Texto negro -->
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">4dp</item> <!-- Añadir sombra para resaltar el botón -->
+    </style>
+</resources>
