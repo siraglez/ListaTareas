@@ -1,56 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/windowBackground">
 
+    <!-- Título de la pantalla -->
     <TextView
-        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/my_reminders"
-        android:textSize="18sp"
-        android:textColor="#000000" />
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Mis recordatorios"
+        android:textColor="#5E35B1"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etTask"
+    <!-- Campo de texto para ingresar tarea y botón añadir -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/add_task_hint"
-        android:inputType="text" />
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_button"
-        android:layout_gravity="end"
-        android:layout_marginTop="8dp" />
+        <EditText
+            android:id="@+id/etTask"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Escribe una tarea"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:background="@color/colorAccent"
+            android:textColor="@color/buttonTextColor" />
 
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:background="@color/buttonBackground"
+            android:textColor="@color/buttonTextColor"
+            style="@style/AddButtonStyle"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- ListView para mostrar tareas -->
     <ListView
         android:id="@+id/lvTasks"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"/>
 
+    <!-- Botones para ver tareas pendientes y hechas -->
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <Button
             android:id="@+id/btnPending"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/BottomButtonStyle"
+            android:text="Pendientes"
             android:layout_weight="1"
-            android:text="@string/pending" />
+            android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/btnDone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/done" />
+            style="@style/BottomButtonStyle"
+            android:text="Hechas"
+            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>
